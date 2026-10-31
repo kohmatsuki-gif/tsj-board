@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Camera test</title>
+<style>body{margin:0;background:#0d0f12;color:#e8eaed;font-family:-apple-system,Arial,sans-serif;padding:4vh 4vw;font-size:3vh}
+button{font-size:3.4vh;padding:2vh 3vw;border:0;border-radius:12px;background:#2fbf71;color:#0d0f12;font-weight:700}
+#log{margin-top:3vh;line-height:1.6;white-space:pre-wrap}video{margin-top:2vh;width:45vw;border-radius:12px;background:#171a1f}</style></head><body>
+<div>Camera &amp; microphone test</div><br><button id="b">Test camera and microphone</button>
+<div id="log"></div><video id="v" autoplay muted playsinline></video>
+<script>
+var log=document.getElementById("log");
+function w(s){log.textContent+=s+"\n"}
+w("Secure page (https): "+(window.isSecureContext?"yes":"NO"));
+w("Camera API available: "+((navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)?"yes":"NO - this browser cannot use the camera"));
+if(navigator.permissions&&navigator.permissions.query){
+  ["camera","microphone"].forEach(function(n){navigator.permissions.query({name:n}).then(function(r){w("Permission "+n+": "+r.state)}).catch(function(){w("Permission "+n+": unknown")})});
+}
+document.getElementById("b").onclick=function(){
+  if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)){w("RESULT: not supported");return}
+  w("Asking for access...");
+  navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(function(s){
+    document.getElementById("v").srcObject=s;
+    w("RESULT: OK - camera "+s.getVideoTracks().length+", microphone "+s.getAudioTracks().length);
+  }).catch(function(e){w("RESULT: FAILED - "+e.name+" / "+e.message)});
+};
+</script></body></html>
