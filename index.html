@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TSJ KPI</title>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:#0d0f12;color:#e8eaed;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;overflow:hidden}
+#stage{position:relative;height:100vh}
+.slide{position:absolute;inset:0;padding:4.2vh 4vw 7vh;opacity:0;transition:opacity .9s ease;display:flex;flex-direction:column}
+.slide.on{opacity:1}
+h1{font-size:4.2vh;margin:0 0 .6vh;font-weight:700}
+h2{font-size:3.6vh;margin:0 0 2.4vh;font-weight:700}
+.sub{color:#8b9199;font-size:2vh;margin-bottom:3.4vh}
+.cards{display:flex;gap:2vw;flex:1}
+.card{flex:1;background:#171a1f;border-radius:16px;padding:4vh 2.4vw;display:flex;flex-direction:column;justify-content:center}
+.lab{color:#8b9199;font-size:2.6vh;margin-bottom:1.6vh}
+.val{font-size:11vh;font-weight:700;line-height:1}
+.tgt{color:#6b7179;font-size:2.2vh;margin-top:1.4vh}
+.g{color:#2fbf71}.r{color:#ff5c5c}.mute{color:#8b9199}
+.vid{display:flex;gap:3vw;flex:1;align-items:center}
+.vid img{width:52%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;background:#171a1f}
+.vid .meta{flex:1;display:flex;flex-direction:column;gap:1.6vh}
+.vid .t{font-size:3.4vh;font-weight:700;line-height:1.25}
+.vid .p{color:#8b9199;font-size:2vh}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:1.6vh 1.6vw;margin-top:1vh}
+.kv div{background:#171a1f;border-radius:12px;padding:1.6vh 1.2vw}
+.kv b{display:block;font-size:4.6vh;line-height:1.1}
+.kv span{color:#8b9199;font-size:1.8vh}
+.flag{font-size:2.2vh;color:#ff5c5c}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2vh 1.6vw;align-content:start}
+.tile{background:#171a1f;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.tile img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tile div{padding:1vh .9vw;font-size:1.8vh;display:flex;justify-content:space-between;gap:.8vw}
+.tile b{font-size:3.2vh}
+table{width:100%;border-collapse:collapse;font-size:2.3vh}
+th{text-align:left;color:#8b9199;font-weight:500;padding:1.2vh .8vw;border-bottom:1px solid #262a31}
+td{padding:1.5vh .8vw;border-bottom:1px solid #1b1e24}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:2.4vh 2vw;flex:1}
+.big div{background:#171a1f;border-radius:16px;padding:3vh 2vw;display:flex;flex-direction:column;justify-content:center}
+.big b{font-size:8vh;line-height:1}
+.big span{color:#8b9199;font-size:2.4vh;margin-bottom:1.2vh}
+#bar{position:fixed;left:0;bottom:0;height:.6vh;background:#2fbf71;width:0}
+#foot{position:fixed;right:2vw;bottom:1.6vh;color:#5d636b;font-size:1.7vh}
+</style></head><body>
+<div id="stage"></div><div id="bar"></div><div id="foot"></div><div id="tap" style="position:fixed;left:2vw;bottom:1.6vh;color:#e6a23c;font-size:1.9vh">Tap once to keep this screen on</div>
+<script>
+var D = {"updated": "2026-11-01 01:30", "window": "2026-10-04 – 2026-11-01", "subs_total": 6370, "views_total": 1140718, "views28": 138062, "net": 476, "gained": 543, "sub_rate": 0.393, "avd": 238, "avp": 37.4, "ret30": 72.0, "ctr": {"date": "2026-10-31", "source": "YouTube Studio", "videos": {"IpFjJF1ICXE": {"title": "Test for thumbnail generation + description only TEA CEREMONY DRAFT", "published": "2026-10-29", "impressions": null, "ctr": null, "ab_running": false, "ab_ready": false}, "YWTEa7gY7XA": {"title": "Shopping in Japan? Everything You Need to Know About the New Tax Rules", "published": "2026-10-22", "impressions": 64500, "ctr": 4.3, "ab_running": false, "ab_ready": false}, "c_fMyUlzmh4": {"title": "Shopping in Shinjuku? Don't Waste Your Day — 5 Routes EXPLAINED", "published": "2026-10-16", "impressions": 182900, "ctr": 5.0, "ab_running": false, "ab_ready": false}, "wG2cVT9isvM": {"title": "3 Days in Central Hokkaido : Sapporo, Furano & Biei", "published": "2026-09-24", "impressions": 10200, "ctr": 2.3, "ab_running": false, "ab_ready": true}, "DAltsFdsqS4": {"title": "Is Kanazawa Better Than Kyoto? | Japan Travel Guide", "published": "2026-09-18", "impressions": 20300, "ctr": 3.1, "ab_running": false, "ab_ready": false}, "38nYtL0EpeM": {"title": "How to Buy Shinkansen Tickets: The Ultimate Guide!", "published": "2026-08-26", "impressions": 169200, "ctr": 4.7, "ab_running": false, "ab_ready": false}, "mw8nmDeZWAI": {"title": "Kyoto's Public Transportation: The Ultimate Guide", "published": "2026-08-20", "impressions": 22300, "ctr": 4.7, "ab_running": false, "ab_ready": false}, "GI5Vl7YOB_4": {"title": "3 Days in Hiroshima & Miyajima Island: What Most Visitors Miss", "published": "2026-08-10", "impressions": 16400, "ctr": 2.5, "ab_running": false, "ab_ready": false}, "iQznoP9jfwo": {"title": "Paragliding Across Japan's Skies: Thrilling Adventures in Nagano", "published": "2026-08-08", "impressions": 11200, "ctr": 1.4, "ab_running": false, "ab_ready": false}, "xUMs6zJg0Io": {"title": "Southern Nagano: A Rural Mountain Stay in the Japan Alps", "published": "2026-07-22", "impressions": 8700, "ctr": 2.7, "ab_running": false, "ab_ready": false}}, "value": 4.47, "value_label": "recent long videos (impression-weighted, since publish)"}, "recent": [{"id": "IpFjJF1ICXE", "title": "Test for thumbnail generation + description only TEA CEREMONY DRAFT", "pub": "2026-10-29", "ret30": null, "views": 0, "drop": null, "drop_at": null, "sub": 0, "ctr": null, "impressions": null, "ab_running": false}, {"id": "YWTEa7gY7XA", "title": "Shopping in Japan? Everything You Need to Know About the New Tax Rules", "pub": "2026-10-22", "ret30": 71.7, "views": 9221, "drop": 7.2, "drop_at": "0:05→0:11", "sub": 0.35, "ctr": 4.3, "impressions": 64500, "ab_running": false}, {"id": "c_fMyUlzmh4", "title": "Shopping in Shinjuku? Don't Waste Your Day — 5 Routes EXPLAINED", "pub": "2026-10-16", "ret30": 76.5, "views": 24569, "drop": 12.0, "drop_at": "0:21→0:32", "sub": 0.45, "ctr": 5.0, "impressions": 182900, "ab_running": false}, {"id": "wG2cVT9isvM", "title": "3 Days in Central Hokkaido : Sapporo, Furano & Biei", "pub": "2026-09-24", "ret30": 72.0, "views": 759, "drop": 15.1, "drop_at": "0:10→0:21", "sub": 0.13, "ctr": 2.3, "impressions": 10200, "ab_running": false}, {"id": "DAltsFdsqS4", "title": "Is Kanazawa Better Than Kyoto? | Japan Travel Guide", "pub": "2026-09-18", "ret30": 68.3, "views": 2357, "drop": 21.9, "drop_at": "0:14→0:29", "sub": 0.34, "ctr": 3.1, "impressions": 20300, "ab_running": false}, {"id": "38nYtL0EpeM", "title": "How to Buy Shinkansen Tickets: The Ultimate Guide!", "pub": "2026-08-26", "ret30": 72.1, "views": 24214, "drop": 11.7, "drop_at": "0:07→0:15", "sub": 0.38, "ctr": 4.7, "impressions": 169200, "ab_running": false}], "targets": {"ctr": 6.0, "ret30": 70.0, "sub": 1.0, "ig_sec": 15.0}};
+var SLIDE_MS = 12000, REFRESH_MS = 5*60*1000;
+var i = 0, slides = [], t0 = Date.now();
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function num(v){return v==null?"—":Number(v).toLocaleString("en-US")}
+function pc(v){return v==null?"—":v+"%"}
+function cls(v,t){return v==null?"mute":(v>=t?"g":"r")}
+function thumb(id){return "https://i.ytimg.com/vi/"+id+"/maxresdefault.jpg"}
+function img(id){return '<img src="'+thumb(id)+'" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg\'">'}
+function videos(){return (D.recent||[]).filter(function(r){return r.id && !(r.views===0 && r.ctr==null)})}
+function build(){
+  var T=D.targets, s=[], vs=videos(), c=D.ctr||{};
+  s.push('<h1>Travel Smart Japan — KPI</h1><div class="sub">Last 28 days ('+esc(D.window)+')　/　These three until December</div>'
+   +(c.value==null?'<div class="sub" style="color:#e6a23c">CTR comes from YouTube Studio, and the latest fetch has stopped.</div>':'')
+   +'<div class="cards">'
+   +card("Thumbnail CTR",c.value,T.ctr)+card("Retention at 0:30",D.ret30,T.ret30)+card("Subscribe rate",D.sub_rate==null?null:Math.round(D.sub_rate*100)/100,T.sub)+'</div>');
+  vs.forEach(function(r,k){
+    var bad = r.drop!=null && r.drop>20;
+    s.push('<h2>Recent video '+(k+1)+' of '+vs.length+'</h2><div class="vid">'+img(r.id)
+     +'<div class="meta"><div class="t">'+esc(r.title)+'</div><div class="p">Published '+esc(r.pub)+(r.ab_running?'　·　Thumbnail A/B test running':'')+'</div>'
+     +'<div class="kv">'
+     +'<div><b class="'+cls(r.ctr,T.ctr)+'">'+pc(r.ctr)+'</b><span>CTR (target '+T.ctr+'%)</span></div>'
+     +'<div><b>'+num(r.impressions)+'</b><span>Impressions</span></div>'
+     +'<div><b class="'+cls(r.ret30,T.ret30)+'">'+pc(r.ret30)+'</b><span>Retention at 0:30 (target '+T.ret30+'%)</span></div>'
+     +'<div><b class="'+cls(r.sub,T.sub)+'">'+pc(r.sub)+'</b><span>Subscribe rate (target '+T.sub+'%)</span></div>'
+     +'<div><b>'+num(r.views)+'</b><span>Views</span></div>'
+     +'<div><b class="'+(r.drop==null?"mute":(bad?"r":"g"))+'">'+(r.drop==null?"—":"-"+r.drop+"pt")+'</b><span>Early drop '+esc(r.drop_at||"")+'</span></div>'
+     +'</div>'+(bad?'<div class="flag">Over 20pt in the first minute: fix the next script</div>':'')+'</div></div>');
+  });
+  var byCtr = vs.filter(function(r){return r.ctr!=null}).sort(function(a,b){return b.ctr-a.ctr}).slice(0,6);
+  if(byCtr.length) s.push('<h2>Thumbnails by CTR</h2><div class="grid">'+byCtr.map(function(r,k){
+     return '<div class="tile">'+img(r.id)+'<div><span>#'+(k+1)+' '+esc(r.title.slice(0,38))+'</span><b class="'+cls(r.ctr,T.ctr)+'">'+r.ctr+'%</b></div></div>'}).join('')+'</div>');
+  s.push('<h2>Where viewers leave in the first minute</h2><table><tr><th>Video</th><th>Published</th><th>Early drop (over 20pt = fail)</th><th>Retention at 0:30</th></tr>'
+    +vs.map(function(r){var bad=r.drop!=null&&r.drop>20;return '<tr><td>'+esc(r.title.slice(0,52))+'</td><td>'+esc(r.pub)+'</td><td class="'+(r.drop==null?"mute":(bad?"r":"g"))+'">'+(r.drop==null?"—":"-"+r.drop+"pt "+esc(r.drop_at||""))+(bad?" · fix the next script":"")+'</td><td class="'+cls(r.ret30,T.ret30)+'">'+pc(r.ret30)+'</td></tr>'}).join('')+'</table>');
+  s.push('<h2>Channel</h2><div class="big">'
+    +'<div><span>Subscribers</span><b>'+num(D.subs_total)+'</b><span style="margin:1vh 0 0">+'+num(D.net)+' net in 28 days</span></div>'
+    +'<div><span>Views in 28 days</span><b>'+num(D.views28)+'</b></div>'
+    +'<div><span>Avg view duration</span><b>'+Math.floor(D.avd/60)+'m '+(D.avd%60)+'s</b><span style="margin:1vh 0 0">'+D.avp+'% of each video</span></div>'
+    +'<div><span>Total views</span><b>'+num(D.views_total)+'</b></div></div>');
+  document.getElementById("stage").innerHTML = s.map(function(h){return '<section class="slide">'+h+'</section>'}).join('');
+  slides = [].slice.call(document.querySelectorAll(".slide"));
+  if(i>=slides.length) i=0;
+  slides[i].classList.add("on"); t0=Date.now(); foot();
+}
+function card(l,v,t){return '<div class="card"><div class="lab">'+l+'</div><div class="val '+cls(v,t)+'">'+pc(v)+'</div><div class="tgt">Target '+t+'%</div></div>'}
+function foot(){document.getElementById("foot").textContent=(i+1)+" / "+slides.length+"　·　Updated "+D.updated}
+function next(){slides[i].classList.remove("on");i=(i+1)%slides.length;slides[i].classList.add("on");t0=Date.now();foot()}
+setInterval(next, SLIDE_MS);
+setInterval(function(){document.getElementById("bar").style.width=Math.min(100,(Date.now()-t0)/SLIDE_MS*100)+"%"},200);
+function refresh(){
+  var x=new XMLHttpRequest(); x.open("GET","data.json?t="+Date.now());
+  x.onload=function(){try{var n=JSON.parse(x.responseText); if(n.updated!==D.updated){D=n; build();}}catch(e){}};
+  x.send();
+}
+setInterval(refresh, REFRESH_MS);
+setTimeout(function(){location.reload()}, 6*3600*1000);
+// Echo Show の Silk はしばらくするとホームに戻る。無音を流し続けて使用中にしておく（最初の1タップが必要）
+var ka=null;
+function keepAlive(){
+  if(ka) return;
+  var sr=8000,n=sr*2,b=new ArrayBuffer(44+n*2),v=new DataView(b);
+  function w(o,t){for(var k=0;k<t.length;k++)v.setUint8(o+k,t.charCodeAt(k))}
+  w(0,'RIFF');v.setUint32(4,36+n*2,true);w(8,'WAVE');w(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);
+  v.setUint32(24,sr,true);v.setUint32(28,sr*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*2,true);
+  ka=new Audio(URL.createObjectURL(new Blob([b],{type:'audio/wav'})));ka.loop=true;
+  ka.play().then(function(){document.getElementById('tap').style.display='none'}).catch(function(){ka=null});
+  setInterval(function(){if(ka){ka.currentTime=0;ka.play().catch(function(){})}},60000);
+}
+document.addEventListener('click',keepAlive);document.addEventListener('touchstart',keepAlive);
+build();
+</script></body></html>
